@@ -75,13 +75,19 @@ if __name__ == '__main__':
     elem.click()
     time.sleep(1)
 
-    # ページを16500ピクセル下にスクロールする
-    webdriver.execute_script("window.scrollBy(0,17500)")
-
-    # 経験なしクリック
-    elem = webdriver.find_element(By.XPATH, '// *[ @ id = "wpforms-87-field_6"] / li[1]')
+    # 今までのパソコンスキルを教えてください。
+    elem = webdriver.find_element(By.XPATH, '// *[ @ id = "wpforms-87-field_6_1"]')
     elem.click()
     time.sleep(1)
+
+    # ページを16500ピクセル下にスクロールする
+    # webdriver.execute_script("window.scrollBy(0,17500)")
+
+    # 下に下げる
+    actions.send_keys(Keys.PAGE_DOWN)
+    actions.perform()
+    time.sleep(1)
+
 
     # 予約
     elem = webdriver.find_element(By.XPATH, '// *[ @ id = "wpforms-87-field_11"]')
@@ -90,9 +96,9 @@ if __name__ == '__main__':
     elem.send_keys("１月１１日１８：００ １月１４日１９：００　　")
 
     # submit
-    elem = webdriver.find_element(By.XPATH, '// *[ @ id = "wpforms-submit-87"]')
-    time.sleep(1)
-    elem.click()
+    # elem = webdriver.find_element(By.XPATH, '// *[ @ id = "wpforms-submit-87"]')
+    # time.sleep(1)
+    # elem.click()
 
     # webdriver終了
     time.sleep(10)
